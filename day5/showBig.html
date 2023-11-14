@@ -15,20 +15,20 @@
     <h2>커피의 세계</h2>
     <div id="pic">
       <img src="images/coffee-blue.jpg" alt="커피잔" id="cup">
-    <div id="smallPic">
-    <img src="images/coffee-blue.jpg" calss="small" alt="커피잔">
-    <img src="images/coffee-gray.jpg" calss="small" alt="커피잔">
-    <img src="images/coffee-pink.jpg" calss="small" alt="커피잔">
+      <div id="smallPic">
+        <img src="images/coffee-blue.jpg" class="small" alt="커피잔" >
+        <img src="images/coffee-gray.jpg" class="small" alt="커피잔" >
+        <img src="images/coffee-pink.jpg" class="small" alt="커피잔" >
+      </div>
     </div>
-  </div>
   </section>
-
+    
   <script>
     let bigPic = document.querySelector("#cup");
-    let smallPics = document.querySelector(".small");
-    // smallPics[1].onclick = showBig; //호출
+    let smallPics = document.querySelectorAll(".small");
+    //smallPics[1].onclick = showBig;  //1번 이미지 클릭 - 호출
 
-    for(let i=0; i<smallPics.length; i++){
+    /*for(let i=0; i<smallPics.length; i++){
       smallPics[i].onclick = showBig;
     }
 
@@ -36,7 +36,15 @@
       //console.log(bigPic.getAttribute("src"));
       //this.src - 클릭한 대상 이미지 소스 경로
       bigPic.setAttribute("src", this.src);
+    }*/
+
+    //실행 함수
+    for(let i=0; i<smallPics.length; i++){
+      smallPics[i].onclick = function(){
+        bigPic.setAttribute("src", this.src);
+      };
     }
+
   </script>
 </body>
 </html>
